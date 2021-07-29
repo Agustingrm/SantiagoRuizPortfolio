@@ -1,4 +1,4 @@
-#IndustrialDesignContainer {
+#CGIContainer {
   background-color: white;
   float: right;
   width: calc(100vw - 350px);
@@ -10,14 +10,14 @@
   justify-content: center;
 }
 
-#imgContainer {
+#imgContainerCGI {
   width: calc(99vw - 350px);
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
 }
 
-#IndustrialDesignContainer img {
+#CGIContainer img {
   margin: calc(99vw / 264 - 350px / 264);
   height: calc(99vw / 3.3 - 350px / 3.3);
 }

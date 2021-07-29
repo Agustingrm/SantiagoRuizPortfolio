@@ -1,17 +1,22 @@
 import { BrowserRouter, Route } from "react-router-dom";
+import GlobalState from "./Context/GlobalState";
 import Menu from "./Components/Menu";
-import About from "./Pages/About";
-import IndustrialDesign from "./Pages/IndustrialDesign";
+import AboutPage from "./Pages/AboutPage";
+import CGIPage from "./Pages/CGIPage";
+import GraphicsPage from "./Pages/GraphicsPage";
+import IndustrialDesignPage from "./Pages/IndustrialDesignPage";
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Menu />
-        <Route path="/about" exact component={About} />
-        <Route path="/industrial-design" exact component={IndustrialDesign} />
-      </BrowserRouter>
-    </div>
+      <GlobalState>
+        <BrowserRouter>
+          <Menu />
+          <Route path="/about" exact component={AboutPage} />
+          <Route path="/industrial-design" exact component={IndustrialDesignPage} />
+          <Route path="/CGI" exact component={CGIPage} />
+          <Route path="/graphics" exact component={GraphicsPage} />
+        </BrowserRouter>
+      </GlobalState>
   );
 }
 

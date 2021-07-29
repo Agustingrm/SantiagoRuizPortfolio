@@ -1,7 +1,7 @@
-import "../Assets/Styles/About.css";
+import "../Assets/Styles/AboutPage.css";
 import aboutPhoto from "../Assets/aboutPhoto.png";
 
-function About() {
+function AboutPage() {
   return (
     <div id="aboutContainer">
       <div id="aboutTextContainer">
@@ -31,4 +31,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutPage;
