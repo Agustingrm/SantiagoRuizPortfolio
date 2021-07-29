@@ -5,6 +5,8 @@ import AboutPage from "./Pages/AboutPage";
 import CGIPage from "./Pages/CGIPage";
 import GraphicsPage from "./Pages/GraphicsPage";
 import IndustrialDesignPage from "./Pages/IndustrialDesignPage";
+import OverviewPage from "./Pages/OverviewPage";
+import DetailsPage from "./Pages/DetailsPage";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path="/industrial-design" exact component={IndustrialDesignPage} />
           <Route path="/CGI" exact component={CGIPage} />
           <Route path="/graphics" exact component={GraphicsPage} />
+          <Route path="/overview" exact component={OverviewPage} />
+          <Route path="/project/algo" exact component={DetailsPage} />
         </BrowserRouter>
       </GlobalState>
   );

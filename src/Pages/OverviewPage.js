@@ -1,14 +1,19 @@
 import PortfolioContext from "../Context/PortfolioContext";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import "../Assets/Styles/ProjectContainer.css";
 
-function CGIPage() {
+function OverviewPage() {
   const context = useContext(PortfolioContext);
   return (
     <div className="generalContainer">
       <div className="imgContainer">
-        {context.projectCGI.map((projectName) => {
-          return <img src={context.projectDatabase[projectName].cover} alt="none" />;
+        {context.projectOverview.map((projectName) => {
+          return (
+            <Link to={"product/" + projectName}>
+              <img src={context.projectDatabase[projectName].cover} alt="none" />
+            </Link>
+          )
         })}
         <div className="separator"></div>
       </div>
@@ -16,4 +21,4 @@ function CGIPage() {
   );
 }
 
-export default CGIPage;
+export default OverviewPage;

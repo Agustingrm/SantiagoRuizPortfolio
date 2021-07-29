@@ -8,6 +8,7 @@ function Menu() {
       <h2>Ruiz</h2>
       <div id="links">
         <Link to="About">About</Link>
+        <Link to="overview">Overview</Link>
         <Link to="industrial-design">Industrial Design</Link>
         <Link to="CGI">CGI</Link>
         <Link to="graphics">Graphics</Link>
