@@ -1,0 +1,43 @@
+@font-face {
+  font-family: HelNowMed;
+  src: url("../Fonts/HelveticaNowDisplay-Medium.otf") format("truetype");
+}
+
+@font-face {
+  font-family: HelNowReg;
+  src: url("../Fonts/HelveticaNowDisplay-Regular.otf") format("truetype");
+}
+
+#projectInfo {
+  z-index: 2;
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  top: 50vh;
+  left: 150px;
+  text-align: right;
+}
+
+.detailName {
+  font-family: HelNowMed;
+}
+
+.detail {
+  font-family: HelNowReg;
+}
+
+#projectDisplay {
+  float: right;
+  width: calc(100vw - 350px);
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#projectDisplay img {
+  height: calc(100vw - 400px);
+}

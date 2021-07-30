@@ -13,12 +13,13 @@ function App() {
       <GlobalState>
         <BrowserRouter>
           <Menu />
-          <Route path="/about" exact component={AboutPage} />
+          <Route path="/" exact component={AboutPage} />
+          {/* <Route path="/about" exact component={AboutPage} /> */}
           <Route path="/industrial-design" exact component={IndustrialDesignPage} />
           <Route path="/CGI" exact component={CGIPage} />
           <Route path="/graphics" exact component={GraphicsPage} />
           <Route path="/overview" exact component={OverviewPage} />
-          <Route path="/project/algo" exact component={DetailsPage} />
+          <Route path="/project/:project" exact component={DetailsPage} />
         </BrowserRouter>
       </GlobalState>
   );

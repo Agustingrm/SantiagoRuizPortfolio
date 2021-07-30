@@ -10,7 +10,7 @@ function OverviewPage() {
       <div className="imgContainer">
         {context.projectOverview.map((projectName) => {
           return (
-            <Link to={"product/" + projectName}>
+            <Link to={"/project/" + projectName}>
               <img src={context.projectDatabase[projectName].cover} alt="none" />
             </Link>
           )

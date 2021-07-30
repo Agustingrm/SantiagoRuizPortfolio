@@ -7,11 +7,11 @@ function Menu() {
       <h2>Santiago</h2>
       <h2>Ruiz</h2>
       <div id="links">
-        <Link to="About">About</Link>
-        <Link to="overview">Overview</Link>
-        <Link to="industrial-design">Industrial Design</Link>
-        <Link to="CGI">CGI</Link>
-        <Link to="graphics">Graphics</Link>
+        <Link to="/">About</Link>
+        <Link to="/overview">Overview</Link>
+        <Link to="/industrial-design">Industrial Design</Link>
+        <Link to="/CGI">CGI</Link>
+        <Link to="/graphics">Graphics</Link>
       </div>
       <div id="contact">
         <p>Contact</p>
