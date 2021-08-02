@@ -10,10 +10,10 @@ function OverviewPage() {
       <div className="imgContainer">
         {context.projectOverview.map((projectName) => {
           return (
-            <Link to={"/project/" + projectName}>
-              <img src={context.projectDatabase[projectName].cover} alt={context.projectDatabase[projectName].name} loading="lazy" key={projectName}/>
+            <Link to={"/project/" + projectName} onClick={context.handleResetWindowDirection()}>
+              <img src={context.projectDatabase[projectName].cover} alt={context.projectDatabase[projectName].name} loading="lazy" key={projectName} />
             </Link>
-          )
+          );
         })}
       </div>
     </div>

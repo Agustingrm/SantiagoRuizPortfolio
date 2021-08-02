@@ -18,7 +18,7 @@ export const animationRight2Left = {
     x: 0,
   },
   three: {
-    x: 1500,
+    x: -1500,
   },
 };
 

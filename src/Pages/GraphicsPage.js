@@ -8,12 +8,12 @@ function GraphicsPage() {
   return (
     <div className="generalContainer">
       <div className="imgContainer">
-      {context.projectGraphics.map((projectName) => {
+        {context.projectGraphics.map((projectName) => {
           return (
-            <Link to={"/project/" + projectName}>
-              <img src={context.projectDatabase[projectName].cover} alt={context.projectDatabase[projectName].name} loading="lazy"/>
+            <Link to={"/project/" + projectName} onClick={context.handleResetWindowDirection()}>
+              <img src={context.projectDatabase[projectName].cover} alt={context.projectDatabase[projectName].name} loading="lazy" />
             </Link>
-          )
+          );
         })}
       </div>
     </div>

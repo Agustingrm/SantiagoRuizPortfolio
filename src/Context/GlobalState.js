@@ -48,12 +48,18 @@ import Wheel1 from "../Assets/Projects/Wheel/Wheel1.jpg";
 import Wheel2 from "../Assets/Projects/Wheel/Wheel2.jpg";
 import Wheel3 from "../Assets/Projects/Wheel/Wheel3.jpg";
 import Wheel4 from "../Assets/Projects/Wheel/Wheel4.jpg";
+import { useState } from "react";
 
 function GlobalState({ children }) {
   const projectOverview = ["BedroomRender", "Curtains", "Grinder", "HotelRender", "Kitchen", "Knife", "Mirror", "SofaRender", "Wheel", "Spoon"];
   const projectCGI = ["BedroomRender", "SofaRender", "HotelRender"];
   const projectGraphics = ["Wheel", "Kitchen", "Curtains"];
   const projectIndustrialDesign = ["Grinder", "Knife", "Mirror", "Spoon"];
+  const [windowDirection, setWindowDirection] = useState("none");
+
+  const handleResetWindowDirection = () => {
+    setWindowDirection("none");
+  };
 
   const projectDatabase = {
     BedroomRender: {
@@ -129,7 +135,18 @@ function GlobalState({ children }) {
   };
 
   return (
-    <PortfolioContext.Provider value={{ projectDatabase, projectOverview, projectCGI, projectGraphics, projectIndustrialDesign }}>
+    <PortfolioContext.Provider
+      value={{
+        projectDatabase,
+        projectOverview,
+        projectCGI,
+        projectGraphics,
+        projectIndustrialDesign,
+        windowDirection,
+        setWindowDirection,
+        handleResetWindowDirection,
+      }}
+    >
       {children}
     </PortfolioContext.Provider>
   );

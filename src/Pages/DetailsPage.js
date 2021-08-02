@@ -8,7 +8,6 @@ import { animationLeft2Right, animationRight2Left, transition } from "../Assets/
 function DetailsPage(props) {
   const context = useContext(PortfolioContext);
   const project = props.match.params.project;
-  const direction = props.location.props;
   const photoArray = context.projectDatabase[project].detailPhotos;
   const projectOverview = context.projectOverview;
 
@@ -16,36 +15,47 @@ function DetailsPage(props) {
   const previousProject = projectOverview[(projectIndex + (projectOverview.length - 1)) % projectOverview.length];
   const nextProject = projectOverview[(projectIndex + (projectOverview.length + 1)) % projectOverview.length];
 
-  // const motionProps = {
-  //   ...(direction === undefined ? "" : {}),
-  //   ...(direction.name === "right" ? { initial: "one", animate: "two", exit: "three", variants: { animationLeft2Right }, transition: { transition } } : {}),
-  //   ...(direction.name === "right" ? { initial: "one", animate: "two", exit: "three", variants: { animationRight2Left }, transition: { transition } } : {}),
-  // };
+  console.log(context.windowDirection);
 
-  console.log(direction)
+  //This let me change between animations, from left to right or from right to left
+  let motionProps = "";
+  if (context.windowDirection === "right") {
+    motionProps = { initial: "one", animate: "two", exit: "three", variants: animationRight2Left, transition: transition };
+  } else if (context.windowDirection === "left") {
+    motionProps = { initial: "one", animate: "two", exit: "three", variants: animationLeft2Right, transition: transition };
+  }
+
+  const handleLeftLinkClick = () => {
+    context.setWindowDirection("left");
+    console.log(context.windowDirection);
+  };
+
+  const handleRightLinkClick = () => {
+    context.setWindowDirection("right");
+    console.log(context.windowDirection);
+  };
 
   return (
     <div>
-      <motion.div>
-        <Link to={{ pathname: "/project/" + previousProject, props: { name: "left" } }}>
-          <div id="leftTransparent"></div>
-        </Link>
-        <Link to={{ pathname: "/project/" + nextProject, props: { name: "right" } }}>
-          <div id="rightTransparent"></div>
-        </Link>
-        <div id="projectInfo">
-          <p className="detailName">{context.projectDatabase[project].name}</p>
-          <p className="detail">{context.projectDatabase[project].year}</p>
-          <p className="detail">Product Design</p>
-          <p className="detail">worked on sich.design</p>
-        </div>
-        <div id="projectDisplay">
-          {photoArray.map((img) => (
-            <div>
-              <img src={img} alt="none" loading="lazy" key={img} />
-            </div>
-          ))}
-        </div>
+      <Link to={"/project/" + previousProject} onClick={handleLeftLinkClick}>
+        <div id="leftTransparent"></div>
+      </Link>
+      <Link to={"/project/" + nextProject} onClick={handleRightLinkClick}>
+        <div id="rightTransparent"></div>
+      </Link>
+      <div id="projectInfo">
+        <p className="detailName">{context.projectDatabase[project].name}</p>
+        <p className="detail">{context.projectDatabase[project].year}</p>
+        <p className="detail">Product Design</p>
+        <p className="detail">worked on sich.design</p>
+      </div>
+      <motion.div id="projectDisplay" {...motionProps}>
+        {photoArray.map((img) => (
+          <div>
+            <img src={img} alt="none" loading="lazy" key={img} />
+          </div>
+        ))}
+        {console.log(motionProps)}
       </motion.div>
     </div>
   );
