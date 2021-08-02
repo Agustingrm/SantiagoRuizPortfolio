@@ -9,10 +9,10 @@
 }
 
 #projectInfo {
-  z-index: 2;
+  z-index: 3;
   width: 200px;
   height: 150px;
-  position: absolute;
+  position: fixed;
   top: 50vh;
   left: 150px;
   text-align: right;
@@ -28,16 +28,39 @@
 
 #projectDisplay {
   float: right;
-  width: calc(100vw - 350px);
-  height: 100vh;
-  overflow-y: scroll;
-  background-color: red;
+  width: calc(100vw - 390px);
+  background-color: white;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   box-sizing: border-box;
+  align-items: center;
+}
+
+#projectDisplay div {
+  height: calc(100vw * 0.656 - 410px * 0.656);
+  margin-bottom: 20px;
 }
 
 #projectDisplay img {
-  height: calc(100vw - 400px);
+  height: calc(100vw * 0.656 - 410px * 0.656);
 }
+
+#leftTransparent {
+  width: calc(50vw - 200px);
+  height: 100vh;
+  cursor: url(../Icons/leftArrow.svg), auto;
+  position: fixed;
+  right: calc(50vw - 200px);
+  z-index: 3;
+}
+
+#rightTransparent {
+  width: calc(50vw - 200px);
+  height: 100vh;
+  cursor: url(../Icons/rightArrow.svg), auto;
+  position: fixed;
+  right: 0px;
+  z-index: 3;
+}
+

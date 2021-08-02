@@ -9,11 +9,12 @@
 }
 
 #container {
+  z-index: 2;
   background-color: white;
   width: 350px;
   height: 100vh;
-  float:left;
   box-sizing: border-box;
+  position: fixed;
 }
 
 h2 {

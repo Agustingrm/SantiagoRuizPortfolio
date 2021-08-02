@@ -1,32 +1,28 @@
 .generalContainer {
   background-color: white;
   float: right;
-  width: calc(100vw - 350px);
-  height: 100vh;
+  width: calc(100vw - 390px);
   box-sizing: border-box;
-  padding: 20px;
-  overflow-y: scroll;
+  padding: 20px 0;
   display: flex;
-  justify-content: start;
 }
 
 .imgContainer {
   width: calc(99vw - 370px);
-  justify-content: start;
   display: flex;
   flex-wrap: wrap;
 }
 
 .generalContainer img {
-  margin: calc(99vw / 264 - 350px / 264);
+  margin: 0 calc(99vw / 264 - 350px / 264);
+  height: calc(99vw / 3.3 - 350px / 3.3);
+}
+
+.generalContainer a {
+  margin: calc(99vw / 264 - 350px / 264) 0;
   height: calc(99vw / 3.3 - 350px / 3.3);
 }
 
 .generalContainer img:hover {
   cursor: pointer;
-}
-
-.separator {
-  width: calc(95vw - 370px);
-  height: 20px;
 }

@@ -5,13 +5,14 @@
 
 #aboutContainer {
   background-color: white;
-  width: calc(100vw - 350px);
+  width: calc(100vw - 390px);
   height: 100vh;
   font-family: HelNowReg;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  padding-top: 15vh;
+  padding-top: 5vh;
+  float: right;
 }
 
 #aboutTextContainer {
@@ -19,6 +20,11 @@
   text-align: justify;
   margin-right: 10px;
   font-size: 14px;
+}
+
+#aboutImageContainer {
+  width: 236px;
+  height: 314px;
 }
 
 #aboutText1 {

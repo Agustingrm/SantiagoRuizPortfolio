@@ -11,11 +11,10 @@ function OverviewPage() {
         {context.projectOverview.map((projectName) => {
           return (
             <Link to={"/project/" + projectName}>
-              <img src={context.projectDatabase[projectName].cover} alt="none" />
+              <img src={context.projectDatabase[projectName].cover} alt={context.projectDatabase[projectName].name} loading="lazy" key={projectName}/>
             </Link>
           )
         })}
-        <div className="separator"></div>
       </div>
     </div>
   );
