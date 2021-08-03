@@ -2,11 +2,11 @@ import React from "react";
 import "../Assets/Styles/AboutPage.css";
 import aboutPhoto from "../Assets/aboutPhoto.png";
 import { motion } from "framer-motion";
-import { animationLeft2Right } from "../Assets/Animations/animationIndex";
+import { fading, shortTransition } from "../Assets/Animations/animationIndex";
 
 function AboutPage() {
   return (
-    <motion.div id="aboutContainer" initial="one" animate="two" exit="three" variants={animationLeft2Right}>
+    <motion.div id="aboutContainer" initial="one" animate="two" exit="three" variants={fading} transition={shortTransition}>
       <div id="aboutTextContainer">
         <p id="aboutText1">
           Lorem ipsum dolor sit amet consectetur adipiscing elit nibh dignissim mauris tempus, arcu aenean vel tempor ad vitae feugiat suspendisse ullamcorper

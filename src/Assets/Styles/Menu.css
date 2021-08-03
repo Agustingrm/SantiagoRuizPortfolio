@@ -9,12 +9,40 @@
 }
 
 #container {
+  display: flex;
+  flex-direction: column;
+}
+
+#topContainer,
+#bottomContainer {
   z-index: 2;
   background-color: white;
   width: 350px;
-  height: 100vh;
   box-sizing: border-box;
   position: fixed;
+}
+#topContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 15vh;
+}
+
+#title {
+  width: 50%;
+}
+
+#cross {
+  float: right;
+}
+
+#cross img {
+  width: 64px;
+  margin-top: 10px;
+  display: inline;
+}
+
+#cross img:hover {
+  cursor: pointer;
 }
 
 h2 {
@@ -24,6 +52,10 @@ h2 {
   font-size: 35px;
 }
 
+#bottomContainer {
+  top: 15vh;
+  height: 85vh;
+}
 #links {
   display: flex;
   flex-direction: column;
@@ -33,23 +65,47 @@ h2 {
   width: 150px;
 }
 
-#container a,
-#container #instagram,
-#container p {
+#bottomContainer a,
+#bottomContainer #instagram,
+#bottomContainer p {
   text-decoration: none;
   color: black;
   font-family: HelNowReg;
   font-size: 18px;
 }
 
-#container #instagram {
+#bottomContainer #instagram {
   position: absolute;
   bottom: 10px;
   left: 5px;
 }
 
-#container p {
+#bottomContainer p {
   position: absolute;
   bottom: 15px;
   left: 5px;
+}
+
+.showMenu {
+  display: inline;
+}
+
+.hideMenu {
+  display: none;
+}
+
+@media all and (max-width: 750px) {
+  #topContainer {
+    width: 100vw;
+  }
+
+  #cross img {
+    width: 64px;
+    margin-top: 10px;
+    display: inline;
+  }
+
+  #desktopMenu {
+    display: none;
+  }
 }

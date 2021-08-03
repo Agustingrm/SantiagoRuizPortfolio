@@ -22,7 +22,25 @@ export const animationRight2Left = {
   },
 };
 
+export const fading = {
+  one: {
+    opacity:0,
+  },
+  two: {
+    opacity: 1,
+  },
+  three: {
+    opacity: 0,
+  },
+};
+
 export const transition = {
-  duration: 1,
+  duration: 0.5,
   type: "tween",
 };
+
+export const shortTransition = {
+  duration: 0.3,
+  type: "tween",
+};
+

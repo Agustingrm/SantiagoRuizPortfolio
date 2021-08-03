@@ -56,6 +56,15 @@ function GlobalState({ children }) {
   const projectGraphics = ["Wheel", "Kitchen", "Curtains"];
   const projectIndustrialDesign = ["Grinder", "Knife", "Mirror", "Spoon"];
   const [windowDirection, setWindowDirection] = useState("none");
+  const [rotation, setRotation] = useState(0);
+
+  const handleRotation = () => {
+    if (rotation === 0) {
+      setRotation(rotation - 45);
+    } else {
+      setRotation(0)
+    }
+  };
 
   const handleResetWindowDirection = () => {
     setWindowDirection("none");
@@ -145,6 +154,8 @@ function GlobalState({ children }) {
         windowDirection,
         setWindowDirection,
         handleResetWindowDirection,
+        rotation,
+        handleRotation,
       }}
     >
       {children}

@@ -26,3 +26,27 @@
 .generalContainer img:hover {
   cursor: pointer;
 }
+
+@media all and (max-width: 900px){
+  .generalContainer img {
+    margin: 0 calc(97vw / 264 - 350px / 264);
+    height: calc(97vw / 3.3 - 350px / 3.3);
+  }
+  .generalContainer a {
+    margin: calc(97vw / 264 - 350px / 264) 0;
+    height: calc(97vw / 3.3 - 350px / 3.3);
+  }
+  
+}
+
+@media all and (max-width: 750px){
+  .generalContainer img {
+    margin: 0 calc(95vw / 264 - 350px / 264);
+    height: calc(95vw / 3.3 - 350px / 3.3);
+  }
+  .generalContainer a {
+    margin: calc(95vw / 264 - 350px / 264) 0;
+    height: calc(95vw / 3.3 - 350px / 3.3);
+  }
+  
+}
