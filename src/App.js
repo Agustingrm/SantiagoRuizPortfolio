@@ -9,6 +9,7 @@ import IndustrialDesignPage from "./Pages/IndustrialDesignPage";
 import OverviewPage from "./Pages/OverviewPage";
 import DetailsPage from "./Pages/DetailsPage";
 import { AnimatePresence } from "framer-motion";
+import ContactPage from "./Pages/ContactPage";
 
 function App() {
   let location = useLocation();
@@ -18,6 +19,7 @@ function App() {
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route path="/" exact component={AboutPage} />
+          <Route path="/contact" exact component={ContactPage} />
           <Route path="/industrial-design" exact component={IndustrialDesignPage} />
           <Route path="/CGI" exact component={CGIPage} />
           <Route path="/graphics" exact component={GraphicsPage} />

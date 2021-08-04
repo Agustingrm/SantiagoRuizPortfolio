@@ -27,12 +27,12 @@
 }
 
 #projectDisplay {
-  float: right;
-  width: calc(100vw - 390px);
-  background-color: white;
+  float: left;
+  margin-left: 350px;
+  width: calc(100vw - 370px);
   display: flex;
   flex-direction: column;
-  padding: 20px 20px 0 20px;
+  padding: calc(20px + 99vw / 264 - 350px / 264) 20px 0 calc(20px + 99vw / 264 - 350px / 264);
   box-sizing: border-box;
   align-items: center;
 }
@@ -44,6 +44,7 @@
 
 #projectDisplay img {
   height: calc(100vw * 0.656 - 410px * 0.656);
+  max-width: 100%;
 }
 
 #leftTransparent {
@@ -64,3 +65,55 @@
   z-index: 3;
 }
 
+@media all and (max-width: 750px) {
+  #detailsContainer {
+    margin-top: 10vh;
+  }
+
+  #leftTransparent {
+    left: 0;
+    top: 10vh;
+    height: 5vh;
+    width: 50vw;
+  }
+
+  #rightTransparent {
+    left: 50vw;
+    top: 10vh;
+    height: 5vh;
+    width: 50vw;
+  }
+
+  #infoAndProjectContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  #projectInfo {
+    z-index: 0;
+    width: 95vw;
+    height: 20vh;
+    position: relative;
+    top: auto;
+    left: auto;
+    text-align: left;
+    margin: auto;
+  }
+
+  #projectDisplay {
+    float: none;
+    width: 95vw;
+    padding: 20px 20px 0 20px;
+    align-items: center;
+    margin: auto;
+  }
+
+  #projectDisplay div {
+    height: auto;
+    margin-bottom: 5px;
+  }
+
+  #projectDisplay img {
+    height: auto;
+    width: 95vw;
+  }
+}

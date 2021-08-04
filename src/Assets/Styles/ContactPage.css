@@ -1,0 +1,27 @@
+@font-face {
+  font-family: HelNowReg;
+  src: url("../Fonts/HelveticaNowDisplay-Regular.otf") format("truetype");
+}
+
+#contactContainer {
+  font-family: HelNowReg;
+  float: right;
+  width: calc(95vw - 350px);
+  margin-top: 16vh;
+}
+
+#contactContainer div {
+    margin-bottom: 10px;
+}
+
+#contactContainer div p {
+    margin: 0 auto 2px;
+}
+@media all and (max-width: 750px){
+    #contactContainer {
+        float: none;
+        width: 90vw;
+        margin-top: 16vh;
+        margin: 20vh auto;
+      }
+}

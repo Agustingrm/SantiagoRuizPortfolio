@@ -6,13 +6,13 @@
 #aboutContainer {
   background-color: white;
   width: calc(100vw - 390px);
-  height: 100vh;
   font-family: HelNowReg;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  padding-top: 5vh;
+  padding-top: 10vh;
   float: right;
+  margin: 0 10px;
 }
 
 #aboutTextContainer {
@@ -22,7 +22,7 @@
   font-size: 14px;
 }
 
-#aboutImageContainer {
+#aboutImageContainer img {
   width: 236px;
   height: 314px;
 }
@@ -45,4 +45,51 @@
 
 #aboutText5 {
   margin-bottom: 20px;
+}
+
+@media all and (max-width: 960px) {
+  #aboutContainer {
+    padding-top: 5vh;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 0 2vw ;
+  }
+
+  #aboutTextContainer {
+    width: 100%;
+    margin: 0;
+  }
+
+  #aboutImageContainer img {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 5vh;
+  }
+}
+
+@media all and (max-width: 750px) {
+  #aboutContainer {
+    flex-direction: column-reverse;
+    width: 80vw;
+    margin: 15vh auto 5vh;
+    float: none;
+    align-items: center;
+    justify-content: end;
+    padding-top: 0vh;
+  }
+
+  #aboutTextContainer {
+    width: 100%;
+    margin: auto;
+    font-size: 14px;
+  }
+
+  #aboutTextContainer p {
+    width: 100%;
+  }
+  #aboutImageContainer img {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 5vh;
+  }
 }

@@ -22,9 +22,11 @@
   position: fixed;
 }
 #topContainer {
+  z-index: 3;
   display: flex;
   justify-content: space-between;
-  height: 15vh;
+  height: 10vh;
+  background-color: green;
 }
 
 #title {
@@ -53,13 +55,13 @@ h2 {
 }
 
 #bottomContainer {
-  top: 15vh;
-  height: 85vh;
+  top: 10vh;
+  height: 90vh;
 }
 #links {
   display: flex;
   flex-direction: column;
-  margin-top: 15vh;
+  margin-top: 10vh;
   margin-left: 5px;
   text-decoration: none;
   width: 150px;
@@ -76,13 +78,13 @@ h2 {
 
 #bottomContainer #instagram {
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   left: 5px;
 }
 
-#bottomContainer p {
+#bottomContainer #contact {
   position: absolute;
-  bottom: 15px;
+  bottom: 25px;
   left: 5px;
 }
 
@@ -107,5 +109,20 @@ h2 {
 
   #desktopMenu {
     display: none;
+  }
+
+  #bottomContainer{
+    width: 100vw;
+  }
+  #bottomContainer #instagram {
+    position: absolute;
+    bottom: calc(15vh + 5px);
+
+  }
+  
+  #bottomContainer #contact {
+    position: absolute;
+    bottom: calc(15vh + 25px);
+
   }
 }

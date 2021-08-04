@@ -36,27 +36,29 @@ function DetailsPage(props) {
   };
 
   return (
-    <div>
+    <div id='detailsContainer'>
       <Link to={"/project/" + previousProject} onClick={handleLeftLinkClick}>
         <div id="leftTransparent"></div>
       </Link>
       <Link to={"/project/" + nextProject} onClick={handleRightLinkClick}>
         <div id="rightTransparent"></div>
       </Link>
-      <div id="projectInfo">
-        <p className="detailName">{context.projectDatabase[project].name}</p>
-        <p className="detail">{context.projectDatabase[project].year}</p>
-        <p className="detail">Product Design</p>
-        <p className="detail">worked on sich.design</p>
+      <div id='infoAndProjectContainer'>
+        <div id="projectInfo">
+          <p className="detailName">{context.projectDatabase[project].name}</p>
+          <p className="detail">{context.projectDatabase[project].year}</p>
+          <p className="detail">Product Design</p>
+          <p className="detail">worked on sich.design</p>
+        </div>
+        <motion.div id="projectDisplay" {...motionProps}>
+          {photoArray.map((img) => (
+            <div>
+              <img src={img} alt="none" loading="lazy" key={img} />
+            </div>
+          ))}
+          {console.log(motionProps)}
+        </motion.div>
       </div>
-      <motion.div id="projectDisplay" {...motionProps}>
-        {photoArray.map((img) => (
-          <div>
-            <img src={img} alt="none" loading="lazy" key={img} />
-          </div>
-        ))}
-        {console.log(motionProps)}
-      </motion.div>
     </div>
   );
 }

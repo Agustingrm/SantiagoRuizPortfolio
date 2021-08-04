@@ -35,7 +35,7 @@ function Menu() {
             <Link to="/graphics">Graphics</Link>
           </div>
           <div id="contact">
-            <p>Contact</p>
+            <Link to='/contact' id='contact'>Contact</Link>
             <a href="https://www.instagram.com/ruizsantiago/" rel="noreferrer noopener" target="_blank" id="instagram">
               Instagram
             </a>
