@@ -62,7 +62,6 @@ function GlobalState({ children }) {
   const resetAnimations = () => {
     setExit('')
     setRotation(0)
-    console.log('exit')
   }
   const handleRotation = () => {
     if (rotation === 0) {

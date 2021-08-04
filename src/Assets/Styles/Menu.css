@@ -40,7 +40,7 @@
 #cross img {
   width: 64px;
   margin-top: 10px;
-  display: inline;
+  display: none;
 }
 
 #cross img:hover {
