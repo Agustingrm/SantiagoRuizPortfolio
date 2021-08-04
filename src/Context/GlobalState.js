@@ -57,7 +57,13 @@ function GlobalState({ children }) {
   const projectIndustrialDesign = ["Grinder", "Knife", "Mirror", "Spoon"];
   const [windowDirection, setWindowDirection] = useState("none");
   const [rotation, setRotation] = useState(0);
+  const [exit,setExit] = useState('')
 
+  const resetAnimations = () => {
+    setExit('')
+    setRotation(0)
+    console.log('exit')
+  }
   const handleRotation = () => {
     if (rotation === 0) {
       setRotation(rotation - 45);
@@ -156,6 +162,9 @@ function GlobalState({ children }) {
         handleResetWindowDirection,
         rotation,
         handleRotation,
+        exit,
+        setExit,
+        resetAnimations
       }}
     >
       {children}

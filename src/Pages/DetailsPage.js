@@ -15,35 +15,33 @@ function DetailsPage(props) {
   const previousProject = projectOverview[(projectIndex + (projectOverview.length - 1)) % projectOverview.length];
   const nextProject = projectOverview[(projectIndex + (projectOverview.length + 1)) % projectOverview.length];
 
-  console.log(context.windowDirection);
-
   //This let me change between animations, from left to right or from right to left
   let motionProps = "";
   if (context.windowDirection === "right") {
-    motionProps = { initial: "one", animate: "two", exit: "three", variants: animationRight2Left, transition: transition };
+    motionProps = { initial: "one", animate: "two",exit:context.exit, variants: animationRight2Left, transition: transition };
   } else if (context.windowDirection === "left") {
-    motionProps = { initial: "one", animate: "two", exit: "three", variants: animationLeft2Right, transition: transition };
+    motionProps = { initial: "one", animate: "two", exit:context.exit, variants: animationLeft2Right, transition: transition };
   }
 
   const handleLeftLinkClick = () => {
     context.setWindowDirection("left");
-    console.log(context.windowDirection);
+    context.setExit('three')
   };
 
   const handleRightLinkClick = () => {
     context.setWindowDirection("right");
-    console.log(context.windowDirection);
+    context.setExit('three')
   };
 
   return (
-    <div id='detailsContainer'>
+    <div id="detailsContainer">
       <Link to={"/project/" + previousProject} onClick={handleLeftLinkClick}>
         <div id="leftTransparent"></div>
       </Link>
       <Link to={"/project/" + nextProject} onClick={handleRightLinkClick}>
         <div id="rightTransparent"></div>
       </Link>
-      <div id='infoAndProjectContainer'>
+      <div id="infoAndProjectContainer">
         <div id="projectInfo">
           <p className="detailName">{context.projectDatabase[project].name}</p>
           <p className="detail">{context.projectDatabase[project].year}</p>
@@ -56,7 +54,6 @@ function DetailsPage(props) {
               <img src={img} alt="none" loading="lazy" key={img} />
             </div>
           ))}
-          {console.log(motionProps)}
         </motion.div>
       </div>
     </div>
