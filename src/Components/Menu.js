@@ -93,7 +93,7 @@ function Menu() {
             </Link>
           </div>
           <div id="contact">
-            <Link to="/contact" id="contact">
+            <Link to="/contact" id="contact" onClick={handleClickLink}>
               Contact
             </Link>
             <a href="https://www.instagram.com/ruizsantiago/" rel="noreferrer noopener" target="_blank" id="instagram">

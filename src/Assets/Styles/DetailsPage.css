@@ -51,7 +51,7 @@
   height: 100vh;
   cursor: url(../Icons/leftArrow.svg), auto;
   position: fixed;
-  right: calc(50vw - 175px);
+  left: 350px;
   z-index: 3;
 }
 
@@ -60,7 +60,7 @@
   height: 100vh;
   cursor: url(../Icons/rightArrow.svg), auto;
   position: fixed;
-  right: 0px;
+  left: calc(50vw + 175px);
   z-index: 3;
 }
 
