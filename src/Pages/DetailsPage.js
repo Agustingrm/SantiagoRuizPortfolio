@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../Assets/Styles/DetailsPage.css";
 import { motion } from "framer-motion";
 import { animationLeft2Right, animationRight2Left, transition } from "../Assets/Animations/animationIndex";
+import { useSwipeable } from "react-swipeable";
 
 function DetailsPage(props) {
   const context = useContext(PortfolioContext);
@@ -33,12 +34,19 @@ function DetailsPage(props) {
     context.setExit('three')
   };
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => alert('izq'),
+    onSwipedRight: () => alert('der'),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true
+  });
+
   return (
-    <div id="detailsContainer">
-      <Link to={"/project/" + previousProject} onClick={handleLeftLinkClick}>
+    <div id="detailsContainer" {...handlers}>
+      <Link to={"/project/" + previousProject} onClick={handleLeftLinkClick} {...handlers}>
         <div id="leftTransparent"></div>
       </Link>
-      <Link to={"/project/" + nextProject} onClick={handleRightLinkClick}>
+      <Link to={"/project/" + nextProject} onClick={handleRightLinkClick} {...handlers}>
         <div id="rightTransparent"></div>
       </Link>
       <div id="infoAndProjectContainer">

@@ -28,36 +28,35 @@
 
 #projectDisplay {
   float: left;
-  margin-left: 350px;
-  width: calc(100vw - 370px);
+  margin-left: calc(370px + calc(99vw / 264 - 350px / 264));
+  width: calc(99vw - 410px);
   display: flex;
   flex-direction: column;
-  padding: calc(20px + 99vw / 264 - 350px / 264) 20px 0 calc(20px + 99vw / 264 - 350px / 264);
+  padding: calc(20px + 99vw / 264 - 350px / 264) 20px 0 0;
   box-sizing: border-box;
   align-items: center;
 }
 
 #projectDisplay div {
-  height: calc(100vw * 0.656 - 410px * 0.656);
+  height: calc(99vw * 0.656 - 430px * 0.656);
   margin-bottom: 20px;
 }
 
 #projectDisplay img {
-  height: calc(100vw * 0.656 - 410px * 0.656);
-  max-width: 100%;
+  height: calc(99vw * 0.656 - 430px * 0.656);
 }
 
 #leftTransparent {
-  width: calc(50vw - 200px);
+  width: calc(50vw - 175px);
   height: 100vh;
   cursor: url(../Icons/leftArrow.svg), auto;
   position: fixed;
-  right: calc(50vw - 200px);
+  right: calc(50vw - 175px);
   z-index: 3;
 }
 
 #rightTransparent {
-  width: calc(50vw - 200px);
+  width: calc(50vw - 175px);
   height: 100vh;
   cursor: url(../Icons/rightArrow.svg), auto;
   position: fixed;
