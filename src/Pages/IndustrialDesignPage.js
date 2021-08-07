@@ -10,7 +10,7 @@ function IndustrialDesignPage() {
       <div className="imgContainer">
       {context.projectIndustrialDesign.map((projectName) => {
           return (
-            <Link to={"/project/" + projectName} onClick={context.handleResetWindowDirection()}>
+            <Link to={"/project/" + projectName} onClick={context.handleResetWindowDirection()} key={projectName}>
               <img src={context.projectDatabase[projectName].cover} alt={context.projectDatabase[projectName].name} loading="lazy"/>
             </Link>
           )

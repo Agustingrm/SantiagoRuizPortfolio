@@ -1,6 +1,6 @@
 import PortfolioContext from "../Context/PortfolioContext";
-import { useContext } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useContext, useState } from "react";
+import { useHistory } from "react-router-dom";
 import "../Assets/Styles/DetailsPage.css";
 import { motion } from "framer-motion";
 import { animationLeft2Right, animationRight2Left, transition } from "../Assets/Animations/animationIndex";
@@ -11,6 +11,7 @@ function DetailsPage(props) {
   const project = props.match.params.project;
   const photoArray = context.projectDatabase[project].detailPhotos;
   const projectOverview = context.projectOverview;
+  const [disable, setDisable] = useState("");
   const history = useHistory();
 
   const projectIndex = projectOverview.findIndex((element) => element === project);
@@ -27,36 +28,45 @@ function DetailsPage(props) {
   }
 
   const handleLeftLinkClick = () => {
-    context.setWindowDirection("left");
-    context.setExit("three");
+    if (!disable) {
+      context.setWindowDirection("left");
+      context.setExit("three");
+      history.push("/project/" + previousProject)
+    }
   };
 
   const handleRightLinkClick = () => {
-    context.setWindowDirection("right");
-    context.setExit("three");
+    if (!disable) {
+      context.setWindowDirection("right");
+      context.setExit("three");
+      history.push("/project/" + nextProject)
+    }
   };
 
   const handlers = useSwipeable({
     onSwipedLeft: () => {
-      handleRightLinkClick();
+      setDisable("disable");
+      context.setWindowDirection("right");
+      context.setExit("three");
       history.push("/project/" + nextProject);
     },
     onSwipedRight: () => {
-      handleLeftLinkClick();
+      setDisable("disable");
+      context.setWindowDirection("left");
+      context.setExit("three");
       history.push("/project/" + previousProject);
     },
-    preventDefaultTouchmoveEvent: false,
+    preventDefaultTouchmoveEvent: true,
     trackMouse: true,
+    delta: 10,
   });
 
   return (
     <div id="detailsContainer" {...handlers}>
-      <Link to={"/project/" + previousProject} onClick={handleLeftLinkClick} draggable="false">
-        <div id="leftTransparent"></div>
-      </Link>
-      <Link to={"/project/" + nextProject} onClick={handleRightLinkClick} draggable="false">
-        <div id="rightTransparent"></div>
-      </Link>
+      <div className={disable}>
+          <div id="leftTransparent" onClick={handleLeftLinkClick} draggable="false"></div>
+          <div id="rightTransparent" onClick={handleRightLinkClick} draggable="false"></div>
+      </div>
       <div id="infoAndProjectContainer">
         <div id="projectInfo">
           <p className="detailName">{context.projectDatabase[project].name}</p>
