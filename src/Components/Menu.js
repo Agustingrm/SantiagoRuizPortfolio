@@ -15,6 +15,8 @@ function Menu() {
     width: window.innerWidth,
   });
 
+  console.log(dimension);
+
   function debounce(fn, ms) {
     let timer;
     return (_) => {
@@ -33,7 +35,9 @@ function Menu() {
         width: window.innerWidth,
       });
       if (window.matchMedia("(max-width: 750px)").matches) {
-        setDisplay(dimension.height > dimension.width ? "showMenu" : "hideMenu");
+        menuTransition();
+      } else if (window.matchMedia("(min-width: 751px)").matches) {
+        setDisplay("showMenu");
       }
       context.resetAnimations();
     }, 100);
@@ -44,6 +48,15 @@ function Menu() {
   });
   // The code above is to handle rotation of the phone
 
+  //Code to handle the transition of the Menu
+  const menuTransition = () => {
+    setDisplay("transitionMenu");
+    console.log("alaal");
+    setTimeout(() => setDisplay("hideMenu"), 600);
+  };
+
+  //End of code handling Menu Transition
+
   useEffect(() => {
     if (window.matchMedia("(max-width: 750px)").matches) {
       setDisplay("hideMenu");
@@ -53,7 +66,7 @@ function Menu() {
   }, []);
 
   const handleClick = () => {
-    setDisplay(display === "showMenu" ? "hideMenu" : "showMenu");
+    display === "showMenu" ? menuTransition() : setDisplay("showMenu");
   };
 
   const handleClickLink = () => {
@@ -65,22 +78,20 @@ function Menu() {
   return (
     <div id="container">
       <div id="topContainer">
-        <div id="title">
-          <h2>Santiago</h2>
-          <h2>Ruiz</h2>
-        </div>
+        <Link to="/" onClick={handleClickLink} id="title">
+          <h2>SANTIAGO</h2>
+          <h2 id="lastName">RUIZ</h2>
+        </Link>
         <div id="cross" onClick={handleClick}>
           <motion.img src={cross} alt="menu" animate={{ rotate: context.rotation }} onClick={context.handleRotation} />
         </div>
       </div>
       <div className={display}>
         <div id="bottomContainer">
+          {/* Ver transicion para que sea con fading */}
           <div id="links">
-            <Link to="/" onClick={handleClickLink}>
+            <Link to="/about" onClick={handleClickLink}>
               About
-            </Link>
-            <Link to="/overview" onClick={handleClickLink}>
-              Overview
             </Link>
             <Link to="/industrial-design" onClick={handleClickLink}>
               Industrial Design

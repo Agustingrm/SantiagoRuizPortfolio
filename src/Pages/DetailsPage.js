@@ -1,5 +1,5 @@
 import PortfolioContext from "../Context/PortfolioContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../Assets/Styles/DetailsPage.css";
 import { motion } from "framer-motion";
@@ -20,13 +20,22 @@ function DetailsPage(props) {
 
   //This let me change between animations, from left to right or from right to left
 
+  //This lines handle the animation
   let motionProps = "";
   if (context.windowDirection === "right") {
     motionProps = { initial: "one", animate: "two", exit: context.exit, variants: animationRight2Left, transition: transition };
   } else if (context.windowDirection === "left") {
     motionProps = { initial: "one", animate: "two", exit: context.exit, variants: animationLeft2Right, transition: transition };
   }
+  //End of animations
 
+  //This lines make the windows go to top of the page on load
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+  //End of windows go to top of the page
+
+  //Handles click to go to the next and previous project
   const handleLeftLinkClick = () => {
     if (!disable) {
       context.setWindowDirection("left");
@@ -42,7 +51,9 @@ function DetailsPage(props) {
       history.push("/project/" + nextProject)
     }
   };
+  //End of handle Click
 
+  //Handles swipe action to go to the previous and next Project
   const handlers = useSwipeable({
     onSwipedLeft: () => {
       setDisable("disable");
@@ -58,12 +69,13 @@ function DetailsPage(props) {
     },
     preventDefaultTouchmoveEvent: true,
     trackMouse: true,
-    delta: 10,
+    delta: 100,
   });
+  //Ends of handle swipe
 
   return (
-    <div id="detailsContainer" {...handlers}>
-      <div className={disable}>
+    <div id="detailsContainer">
+      <div className={disable} {...handlers}>
           <div id="leftTransparent" onClick={handleLeftLinkClick} draggable="false"></div>
           <div id="rightTransparent" onClick={handleRightLinkClick} draggable="false"></div>
       </div>

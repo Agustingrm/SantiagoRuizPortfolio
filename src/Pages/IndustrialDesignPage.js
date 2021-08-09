@@ -2,11 +2,13 @@ import PortfolioContext from "../Context/PortfolioContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../Assets/Styles/ProjectContainer.css";
+import { motion } from "framer-motion";
+import { fading, shortTransition } from "../Assets/Animations/animationIndex";
 
 function IndustrialDesignPage() {
   const context = useContext(PortfolioContext);
   return (
-    <div className="generalContainer">
+    <motion.div className="generalContainer" initial="one" animate="two" exit="three" variants={fading} transition={shortTransition}>
       <div className="imgContainer">
       {context.projectIndustrialDesign.map((projectName) => {
           return (
@@ -16,7 +18,7 @@ function IndustrialDesignPage() {
           )
         })}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

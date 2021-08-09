@@ -78,9 +78,11 @@ function GlobalState({ children }) {
   const projectDatabase = {
     BedroomRender: {
       name: "Bedroom Render",
-      year: 2020,
+      year: '<p>hola <strong>como </strong>estas</p>',
       cover: BedroomRenderCover,
       category: "CGI",
+      // text: 'Caja de texto', agregar categoria. Poner como caja para poner varios renglones product desing y worked on bla bla
+
       detailPhotos: [BedroomRender1, BedroomRender2, BedroomRender3, BedroomRender4],
     },
     Curtains: {
