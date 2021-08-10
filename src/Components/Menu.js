@@ -35,7 +35,7 @@ function Menu() {
         width: window.innerWidth,
       });
       if (window.matchMedia("(max-width: 750px)").matches) {
-        menuTransition();
+        setDisplay("hideMenu");
       } else if (window.matchMedia("(min-width: 751px)").matches) {
         setDisplay("showMenu");
       }
@@ -51,8 +51,7 @@ function Menu() {
   //Code to handle the transition of the Menu
   const menuTransition = () => {
     setDisplay("transitionMenu");
-    console.log("alaal");
-    setTimeout(() => setDisplay("hideMenu"), 600);
+    setTimeout(() => setDisplay("hideMenu"), 130);
   };
 
   //End of code handling Menu Transition
@@ -72,13 +71,13 @@ function Menu() {
   const handleClickLink = () => {
     context.resetAnimations();
     if (window.matchMedia("(max-width: 750px)").matches) {
-      handleClick();
+      display === "showMenu" ? menuTransition() : setDisplay('hideMenu');
     }
   };
   return (
     <div id="container">
       <div id="topContainer">
-        <Link to="/" onClick={handleClickLink} id="title">
+        <Link to="/" id="title">
           <h2>SANTIAGO</h2>
           <h2 id="lastName">RUIZ</h2>
         </Link>

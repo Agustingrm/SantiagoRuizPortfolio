@@ -1,4 +1,5 @@
 {
+  "homepage": "https://rzsantiago.github.io/SantiagoRuizPortfolio",
   "name": "portfolio_santiago_ruiz",
   "version": "0.1.0",
   "private": true,
@@ -7,7 +8,6 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "framer-motion": "^4.1.17",
-    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router": "^5.2.0",
@@ -39,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }

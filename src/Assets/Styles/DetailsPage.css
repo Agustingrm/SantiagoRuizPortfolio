@@ -9,9 +9,10 @@
 }
 
 #projectInfo {
+  background-color: white;
   z-index: 6;
   width: 200px;
-  height: 150px;
+  height: auto;
   position: fixed;
   top: 50vh;
   left: 130px;
@@ -49,7 +50,7 @@
 }
 
 #leftTransparent {
-  width: calc(5vw - 175px);
+  width: calc(50vw - 175px);
   height: 100vh;
   cursor: url(../Icons/leftArrow.svg), auto;
   position: fixed;
@@ -58,7 +59,7 @@
 }
 
 #rightTransparent {
-  width: calc(5vw - 175px);
+  width: calc(50vw - 175px);
   height: 100vh;
   cursor: url(../Icons/rightArrow.svg), auto;
   position: fixed;
@@ -69,6 +70,11 @@
 .disable {
   display: none;
   touch-action: none;
+}
+
+#mobileArrows {
+  display: none;
+  margin: auto;
 }
 
 @media all and (max-width: 750px) {
@@ -95,11 +101,10 @@
     flex-direction: column;
   }
   #projectInfo {
-    z-index: 0;
+    z-index: unset;
     width: 95vw;
     padding: 0;
-    height: 20vh;
-    position: relative;
+    position: static;
     top: auto;
     left: auto;
     text-align: left;
@@ -129,6 +134,13 @@
     font-size: 14px;
     font-family: HelNowMed;
   }
+
+  #mobileArrows {
+    width: 95vw;
+    display: flex;
+    justify-content: space-between;
+  }
+
 }
 
 @media all and (max-width: 750px) and (max-height: 700px) {
@@ -136,7 +148,8 @@
     margin-top: 15vh;
   }
   #projectInfo {
-    height: 120px;
+    z-index: unset;
+    position: static;
   }
   #leftTransparent {
     top: 15vh;
@@ -146,12 +159,24 @@
   #rightTransparent {
     top: 15vh;
     height: 85vh;
+  }
+
+  #mobileArrows {
+    width: 95vw;
+    display: flex;
+    justify-content: space-between;
   }
 }
 @media all and (max-width: 750px) and (max-height: 450px) {
   #detailsContainer {
     margin-top: 20vh;
   }
+
+  #projectInfo {
+    z-index: unset;
+    position: static;
+  }
+
   #leftTransparent {
     top: 15vh;
     height: 85vh;
@@ -160,5 +185,10 @@
   #rightTransparent {
     top: 15vh;
     height: 85vh;
+  }
+  #mobileArrows {
+    width: 95vw;
+    display: flex;
+    justify-content: space-between;
   }
 }

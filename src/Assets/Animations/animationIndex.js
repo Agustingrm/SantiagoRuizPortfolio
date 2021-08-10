@@ -40,7 +40,7 @@ export const transition = {
 };
 
 export const shortTransition = {
-  duration: 0.3,
+  duration: 0.15,
   type: "tween",
 };
 
