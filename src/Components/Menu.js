@@ -15,7 +15,7 @@ function Menu() {
     width: window.innerWidth,
   });
 
-  console.log(dimension);
+  console.log(dimension+'ss');
 
   function debounce(fn, ms) {
     let timer;
@@ -71,13 +71,13 @@ function Menu() {
   const handleClickLink = () => {
     context.resetAnimations();
     if (window.matchMedia("(max-width: 750px)").matches) {
-      display === "showMenu" ? menuTransition() : setDisplay('hideMenu');
+      setDisplay('hideMenu');
     }
   };
   return (
     <div id="container">
       <div id="topContainer">
-        <Link to="/" id="title">
+        <Link to="/SantiagoRuizPortfolio" id="title">
           <h2>SANTIAGO</h2>
           <h2 id="lastName">RUIZ</h2>
         </Link>
@@ -89,21 +89,21 @@ function Menu() {
         <div id="bottomContainer">
           {/* Ver transicion para que sea con fading */}
           <div id="links">
-            <Link to="/about" onClick={handleClickLink}>
+            <Link to="/SantiagoRuizPortfolio/about" onClick={handleClickLink}>
               About
             </Link>
-            <Link to="/industrial-design" onClick={handleClickLink}>
+            <Link to="/SantiagoRuizPortfolio/industrial-design" onClick={handleClickLink}>
               Industrial Design
             </Link>
-            <Link to="/CGI" onClick={handleClickLink}>
+            <Link to="/SantiagoRuizPortfolio/CGI" onClick={handleClickLink}>
               CGI
             </Link>
-            <Link to="/graphics" onClick={handleClickLink}>
+            <Link to="/SantiagoRuizPortfolio/graphics" onClick={handleClickLink}>
               Graphics
             </Link>
           </div>
-          <div id="contact">
-            <Link to="/contact" id="contact" onClick={handleClickLink}>
+          <div>
+            <Link to="/SantiagoRuizPortfolio/contact" id="contact" onClick={handleClickLink}>
               Contact
             </Link>
             <a href="https://www.instagram.com/ruizsantiago/" rel="noreferrer noopener" target="_blank" id="instagram">

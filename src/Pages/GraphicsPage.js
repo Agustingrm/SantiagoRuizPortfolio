@@ -12,7 +12,7 @@ function GraphicsPage() {
       <div className="imgContainer">
         {context.projectGraphics.map((projectName) => {
           return (
-            <Link to={"/project/" + projectName} onClick={context.handleResetWindowDirection()} key={projectName}>
+            <Link to={"/SantiagoRuizPortfolio/project/" + projectName} onClick={context.handleResetWindowDirection()} key={projectName}>
               <img src={context.projectDatabase[projectName].cover} alt={context.projectDatabase[projectName].name} loading="lazy" />
             </Link>
           );

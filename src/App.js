@@ -18,13 +18,13 @@ function App() {
       <Menu />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
-          <Route path="/" exact component={OverviewPage} />
-          <Route path="/about" exact component={AboutPage} />
-          <Route path="/contact" exact component={ContactPage} />
-          <Route path="/industrial-design" exact component={IndustrialDesignPage} />
-          <Route path="/CGI" exact component={CGIPage} />
-          <Route path="/graphics" exact component={GraphicsPage} />
-          <Route path="/project/:project" exact component={DetailsPage} />
+            <Route path="/SantiagoRuizPortfolio" exact component={OverviewPage} />
+            <Route path="/SantiagoRuizPortfolio/about" exact component={AboutPage} />
+            <Route path="/SantiagoRuizPortfolio/contact" exact component={ContactPage} />
+            <Route path="/SantiagoRuizPortfolio/industrial-design" exact component={IndustrialDesignPage} />
+            <Route path="/SantiagoRuizPortfolio/CGI" exact component={CGIPage} />
+            <Route path="/SantiagoRuizPortfolio/graphics" exact component={GraphicsPage} />
+            <Route path="/SantiagoRuizPortfolio/project/:project" exact component={DetailsPage} />
         </Switch>
       </AnimatePresence>
     </GlobalState>

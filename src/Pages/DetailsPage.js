@@ -42,7 +42,7 @@ function DetailsPage(props) {
     if (!disable) {
       context.setWindowDirection("left");
       context.setExit("three");
-      history.push("/project/" + previousProject);
+      history.push("/SantiagoRuizPortfolio/project/" + previousProject);
     }
   };
 
@@ -50,7 +50,7 @@ function DetailsPage(props) {
     if (!disable) {
       context.setWindowDirection("right");
       context.setExit("three");
-      history.push("/project/" + nextProject);
+      history.push("/SantiagoRuizPortfolio/project/" + nextProject);
     }
   };
   //End of handle Click
@@ -61,13 +61,13 @@ function DetailsPage(props) {
       setDisable("disable");
       context.setWindowDirection("right");
       context.setExit("three");
-      history.push("/project/" + nextProject);
+      history.push("/SantiagoRuizPortfolio/project/" + nextProject);
     },
     onSwipedRight: () => {
       setDisable("disable");
       context.setWindowDirection("left");
       context.setExit("three");
-      history.push("/project/" + previousProject);
+      history.push("/SantiagoRuizPortfolio/project/" + previousProject);
     },
     preventDefaultTouchmoveEvent: true,
     trackMouse: true,
@@ -88,18 +88,18 @@ function DetailsPage(props) {
   }
 
   function handleTouchEnd() {
-    if (touchStart - touchEnd > 20) {
+    if (touchStart - touchEnd > 100) {
       setDisable("disable");
       context.setWindowDirection("right");
       context.setExit("three");
-      history.push("/project/" + nextProject);
+      history.push("/SantiagoRuizPortfolio/project/" + nextProject);
     }
 
-    if (touchStart - touchEnd < -20) {
+    if (touchStart - touchEnd < -100) {
       setDisable("disable");
       context.setWindowDirection("left");
       context.setExit("three");
-      history.push("/project/" + previousProject);
+      history.push("/SantiagoRuizPortfolio/project/" + previousProject);
     }
   }
   //End of Handle Swipe mobile

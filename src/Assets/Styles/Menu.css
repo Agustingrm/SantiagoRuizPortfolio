@@ -65,13 +65,12 @@ a {
 
 #bottomContainer {
   background-color: white;
-  top: 10vh;
-  height: 90vh;
+  height: 100vh;
 }
 #links {
   display: flex;
   flex-direction: column;
-  margin-top: 10vh;
+  margin-top: 20vh;
   margin-left: 15px;
   text-decoration: none;
   width: 150px;
@@ -112,7 +111,7 @@ a {
   }
 
   100% {
-    transform: translateY(-500px);
+    transform: translateY(-110vh);
   }
 }
 
@@ -125,7 +124,7 @@ a {
 .transitionMenu {
   color: black;
   animation-name: hide;
-  animation-duration: 0.15s;
+  animation-duration: 0.3s;
 }
 
 .hideMenu {
@@ -134,7 +133,9 @@ a {
 
 @media all and (max-width: 750px) {
   #topContainer {
-    width: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
   }
 
   h2 {
@@ -142,8 +143,12 @@ a {
   }
 
   #cross img {
-    margin: 10px 20px 0 0;
+    margin: 10px 12px 0 0;
     display: inline;
+  }
+
+  #cross img:hover {
+    background-color: white;
   }
 
   #desktopMenu {
@@ -162,15 +167,15 @@ a {
     position: absolute;
     bottom: calc(15vh + 25px);
   }
+
+  #lastName {
+    margin-top: 0px;
+  }
 }
 
 @media all and (max-width: 750px) and (max-height: 700px) {
-  /* #topContainer {
-    height: 15vh;
-  } */
   #bottomContainer {
-    top: 15vh;
-    height: 85vh;
+    height: 100vh;
   }
 
   #bottomContainer a,
@@ -186,27 +191,30 @@ a {
 
   #bottomContainer #contact {
     position: absolute;
-    bottom: calc(10vh + 20px);
+    bottom: calc(10vh + 25px);
   }
 }
 
-@media all and (max-width: 750px) and (max-height: 450px) {
-  /* #topContainer {
-    height: 20vh;
-  } */
+@media all and (max-width: 850px) and (max-height: 450px) {
   #bottomContainer {
-    top: 20vh;
-    height: 80vh;
+    height: 100vh;
+    top: 0px;
+  }
+  #links {
+    margin-top: 25vh;
+    margin-left: 15px;
+    text-decoration: none;
+    width: 150px;
   }
   #bottomContainer #instagram {
     position: absolute;
-    left: 3px;
+    left: 15px;
     bottom: 5px;
   }
 
   #bottomContainer #contact {
     position: absolute;
-    left: 3px;
+    left: 15px;
     bottom: 25px;
   }
 }
