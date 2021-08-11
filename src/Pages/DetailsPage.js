@@ -80,26 +80,32 @@ function DetailsPage(props) {
   const [touchEnd, setTouchEnd] = useState(0);
 
   function handleTouchStart(e) {
-    setTouchStart(e.targetTouches[0].clientX);
+    if (context.display === "hideMenu") {
+      setTouchStart(e.targetTouches[0].clientX);
+    }
   }
 
   function handleTouchMove(e) {
-    setTouchEnd(e.targetTouches[0].clientX);
+    if (context.display === "hideMenu") {
+      setTouchEnd(e.targetTouches[0].clientX);
+    }
   }
 
   function handleTouchEnd() {
-    if (touchStart - touchEnd > 100) {
-      setDisable("disable");
-      context.setWindowDirection("right");
-      context.setExit("three");
-      history.push("/SantiagoRuizPortfolio/project/" + nextProject);
-    }
+    if (context.display === "hideMenu") {
+      if (touchStart - touchEnd > 100) {
+        setDisable("disable");
+        context.setWindowDirection("right");
+        context.setExit("three");
+        history.push("/SantiagoRuizPortfolio/project/" + nextProject);
+      }
 
-    if (touchStart - touchEnd < -100) {
-      setDisable("disable");
-      context.setWindowDirection("left");
-      context.setExit("three");
-      history.push("/SantiagoRuizPortfolio/project/" + previousProject);
+      if (touchStart - touchEnd < -100) {
+        setDisable("disable");
+        context.setWindowDirection("left");
+        context.setExit("three");
+        history.push("/SantiagoRuizPortfolio/project/" + previousProject);
+      }
     }
   }
   //End of Handle Swipe mobile
@@ -116,15 +122,15 @@ function DetailsPage(props) {
           <p className="detail">{context.projectDatabase[project].year}</p>
           <div className="detail">
             {context.projectDatabase[project].textBox.map((line) => (
-              <p>{line}</p>
+              <p key={line}>{line}</p>
             ))}
           </div>
         </div>
         <motion.div {...motionProps}>
           <div id="projectDisplay">
             {photoArray.map((img) => (
-              <div {...handlers}>
-                <img src={img} alt="none" loading="lazy" key={img} draggable="false" />
+              <div {...handlers} key={img}>
+                <img src={img} alt="none" loading="lazy" draggable="false" />
               </div>
             ))}
           </div>

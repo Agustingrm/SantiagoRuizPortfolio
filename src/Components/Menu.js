@@ -5,17 +5,15 @@ import cross from "../Assets/Icons/cross.svg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-function Menu() {
+function Menu(props) {
   const context = useContext(PortfolioContext);
-  const [display, setDisplay] = useState("");
 
   // From here until the next comentary the code is to handle the rotation of the phone
   const [dimension, setDimension] = useState({
     height: window.innerHeight,
     width: window.innerWidth,
   });
-
-  console.log(dimension+'ss');
+  console.log(dimension)
 
   function debounce(fn, ms) {
     let timer;
@@ -35,9 +33,9 @@ function Menu() {
         width: window.innerWidth,
       });
       if (window.matchMedia("(max-width: 750px)").matches) {
-        setDisplay("hideMenu");
+        context.setDisplay("hideMenu");
       } else if (window.matchMedia("(min-width: 751px)").matches) {
-        setDisplay("showMenu");
+        context.setDisplay("showMenu");
       }
       context.resetAnimations();
     }, 100);
@@ -50,34 +48,36 @@ function Menu() {
 
   //Code to handle the transition of the Menu
   const menuTransition = () => {
-    setDisplay("transitionMenu");
-    setTimeout(() => setDisplay("hideMenu"), 130);
+    context.setDisplay("transitionMenu");
+    setTimeout(() => context.setDisplay("hideMenu"), 130);
   };
 
   //End of code handling Menu Transition
 
   useEffect(() => {
     if (window.matchMedia("(max-width: 750px)").matches) {
-      setDisplay("hideMenu");
+      context.setDisplay("hideMenu");
     } else {
-      setDisplay("showMenu");
+      context.setDisplay("showMenu");
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleClick = () => {
-    display === "showMenu" ? menuTransition() : setDisplay("showMenu");
+    context.display === "showMenu" ? menuTransition() : context.setDisplay("showMenu");
   };
 
-  const handleClickLink = () => {
+  const handleClickLink = (category) => {
+    context.setCategory(category)
     context.resetAnimations();
     if (window.matchMedia("(max-width: 750px)").matches) {
-      setDisplay('hideMenu');
+      context.setDisplay('hideMenu');
     }
   };
   return (
     <div id="container">
       <div id="topContainer">
-        <Link to="/SantiagoRuizPortfolio" id="title">
+        <Link to="/SantiagoRuizPortfolio" id="title" onClick={()=>handleClickLink('')}>
           <h2>SANTIAGO</h2>
           <h2 id="lastName">RUIZ</h2>
         </Link>
@@ -85,26 +85,30 @@ function Menu() {
           <motion.img src={cross} alt="menu" animate={{ rotate: context.rotation }} onClick={context.handleRotation} />
         </div>
       </div>
-      <div className={display}>
+      <div className={context.display}>
         <div id="bottomContainer">
-          {/* Ver transicion para que sea con fading */}
           <div id="links">
-            <Link to="/SantiagoRuizPortfolio/about" onClick={handleClickLink}>
-              About
+            <Link to="/SantiagoRuizPortfolio/about" onClick={()=>handleClickLink('about')}>
+              {context.category === 'about' && <p><strong>- About</strong></p>}
+              {context.category !== 'about' && <p>About</p>}
             </Link>
-            <Link to="/SantiagoRuizPortfolio/industrial-design" onClick={handleClickLink}>
-              Industrial Design
+            <Link to="/SantiagoRuizPortfolio/industrial-design" onClick={()=>handleClickLink('industrialDesign')}>
+              {context.category === 'industrialDesign' && <p><strong>+ Industrial Design</strong></p>}
+              {context.category !== 'industrialDesign' && <p>Industrial Design</p>}
             </Link>
-            <Link to="/SantiagoRuizPortfolio/CGI" onClick={handleClickLink}>
-              CGI
+            <Link to="/SantiagoRuizPortfolio/CGI" onClick={()=>handleClickLink('CGI')}>
+              {context.category === 'CGI' && <p><strong>• CGI</strong></p>}
+              {context.category !== 'CGI' && <p>CGI</p>}
             </Link>
-            <Link to="/SantiagoRuizPortfolio/graphics" onClick={handleClickLink}>
-              Graphics
+            <Link to="/SantiagoRuizPortfolio/graphics" onClick={()=>handleClickLink('graphics')}>
+              {context.category === 'graphics' && <p><strong>Graphics</strong></p>}
+              {context.category !== 'graphics' && <p>Graphics</p>}
             </Link>
           </div>
           <div>
-            <Link to="/SantiagoRuizPortfolio/contact" id="contact" onClick={handleClickLink}>
-              Contact
+            <Link to="/SantiagoRuizPortfolio/contact" id="contact" onClick={()=>handleClickLink('contact')}>
+              {context.category === 'contact' && <p><strong>Contact</strong></p>}
+              {context.category !== 'contact' && <p>Contact</p>}
             </Link>
             <a href="https://www.instagram.com/ruizsantiago/" rel="noreferrer noopener" target="_blank" id="instagram">
               Instagram

@@ -58,6 +58,8 @@ function GlobalState({ children }) {
   const [windowDirection, setWindowDirection] = useState("none");
   const [rotation, setRotation] = useState(0);
   const [exit,setExit] = useState('')
+  const [display, setDisplay] = useState("");
+  const [category, setCategory] = useState("");
 
   const resetAnimations = () => {
     setExit('')
@@ -165,7 +167,11 @@ function GlobalState({ children }) {
         handleRotation,
         exit,
         setExit,
-        resetAnimations
+        resetAnimations,
+        display,
+        setDisplay,
+        category,
+        setCategory,
       }}
     >
       {children}

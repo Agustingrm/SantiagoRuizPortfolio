@@ -32,22 +32,22 @@
 
 #projectDisplay {
   float: left;
-  margin-left: calc(370px + calc(100vw / 264 - 370px / 264));
-  width: calc(100vw * 0.931818182 - 350px * 0.931818182);
+  margin-left: calc(380px + calc(100vw / 264 - 380px / 264));
+  width: calc(100vw * 0.931818182 - 370px * 0.931818182);
   display: flex;
   flex-direction: column;
-  padding: calc(9px + 100vw / 264 - 370px / 264) 0 0 0;
+  padding: calc(9px + 100vw / 264 - 380px / 264) 0 0 0;
   box-sizing: border-box;
   align-items: center;
 }
 
 #projectDisplay div {
-  height: calc(100vw * 0.611363636 - 350px * 0.611363636);
-  margin-bottom: 0px;
+  height: calc(100vw * 0.611363636 - 370px * 0.611363636);
+  margin-bottom: 10px;
 }
 
 #projectDisplay img {
-  height: calc(100vw * 0.611363636 - 350px * 0.611363636);
+  height: calc(100vw * 0.611363636 - 370px * 0.611363636);
 }
 
 #leftTransparent {

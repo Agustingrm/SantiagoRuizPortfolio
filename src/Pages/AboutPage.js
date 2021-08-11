@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../Assets/Styles/AboutPage.css";
 import aboutPhoto from "../Assets/aboutPhoto.png";
 import { motion } from "framer-motion";
 import { fading, shortTransition } from "../Assets/Animations/animationIndex";
 
 function AboutPage() {
+  //This lines make the windows go to top of the page on load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  //End of windows go to top of the page
   return (
     <motion.div id="aboutContainer" initial="one" animate="two" exit="three" variants={fading} transition={shortTransition}>
       <div id="aboutTextContainer">
