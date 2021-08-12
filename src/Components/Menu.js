@@ -133,8 +133,8 @@ function Menu(props) {
           <div>
             <Link to="/SantiagoRuizPortfolio/contact" id="contact" onClick={() => handleClickLink("contact")}>
               {context.category === "contact" && (
-                <p>
-                  <strong class='linkSelected'>Contact</strong>
+                <p class='linkSelected'>
+                  <strong>Contact</strong>
                 </p>
               )}
               {context.category !== "contact" && <p>Contact</p>}
