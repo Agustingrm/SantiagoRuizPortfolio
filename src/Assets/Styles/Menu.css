@@ -76,10 +76,10 @@ a {
   width: 150px;
 }
 
-#links p, #contact p {
-  margin:0
+#links p,
+#contact p {
+  margin: 0;
 }
-
 
 #bottomContainer a,
 #bottomContainer #instagram,
@@ -138,6 +138,10 @@ a {
 
 .hideMenu {
   display: none;
+}
+
+.linkSelected {
+  font-family: HelNowMed !important;
 }
 
 @media all and (max-width: 750px) {
