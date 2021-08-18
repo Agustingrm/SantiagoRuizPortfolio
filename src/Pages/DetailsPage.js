@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import PortfolioContext from "../Context/PortfolioContext";
 import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -13,12 +14,23 @@ function DetailsPage(props) {
   const project = props.match.params.project;
   const photoArray = context.projectDatabase[project].detailPhotos;
   const projectOverview = context.projectOverview;
+  const projectCGI = context.projectCGI;
+  const projectGraphics = context.projectGraphics;
+  const projectIndustrialDesign = context.projectIndustrialDesign;
   const [disable, setDisable] = useState("");
   const history = useHistory();
 
-  const projectIndex = projectOverview.findIndex((element) => element === project);
-  const previousProject = projectOverview[(projectIndex + (projectOverview.length - 1)) % projectOverview.length];
-  const nextProject = projectOverview[(projectIndex + (projectOverview.length + 1)) % projectOverview.length];
+  //Find index of project where we are standing 
+  const projectOverviewIndex = projectOverview.findIndex((element) => element === project);
+  const projectCGIIndex = projectCGI.findIndex((element) => element === project);
+  const projectGraphicsIndex = projectGraphics.findIndex((element) => element === project);
+  const projectIndustrialDesignIndex = projectIndustrialDesign.findIndex((element) => element === project);
+  //End of project finf index
+
+  //Takes you to next and previous project
+  let previousProject = projectOverview[(projectOverviewIndex + (projectOverview.length - 1)) % projectOverview.length];
+  let nextProject = projectOverview[(projectOverviewIndex + (projectOverview.length + 1)) % projectOverview.length];
+  //End of next and previous project
 
   //This let me change between animations, from left to right or from right to left
 
@@ -31,11 +43,27 @@ function DetailsPage(props) {
   }
   //End of animations
 
-  //This lines make the windows go to top of the page on load
   useEffect(() => {
+    //Chooses the array of project acording the section
+    if (context.category === "default") {
+      previousProject = projectOverview[(projectOverviewIndex + (projectOverview.length - 1)) % projectOverview.length];
+      nextProject = projectOverview[(projectOverviewIndex + (projectOverview.length + 1)) % projectOverview.length];
+    } else if (context.category === "CGI") {
+      previousProject = projectCGI[(projectCGIIndex + (projectCGI.length - 1)) % projectCGI.length];
+      nextProject = projectCGI[(projectCGIIndex + (projectCGI.length + 1)) % projectCGI.length];
+    } else if (context.category === "industrialDesign") {
+      previousProject = projectIndustrialDesign[(projectIndustrialDesignIndex + (projectIndustrialDesign.length - 1)) % projectIndustrialDesign.length];
+      nextProject = projectIndustrialDesign[(projectIndustrialDesignIndex + (projectIndustrialDesign.length + 1)) % projectIndustrialDesign.length];
+    } else if (context.category === "graphics") {
+      previousProject = projectGraphics[(projectGraphicsIndex + (projectGraphics.length - 1)) % projectGraphics.length];
+      nextProject = projectGraphics[(projectGraphicsIndex + (projectGraphics.length + 1)) % projectGraphics.length];
+    }
+    //End of array choosing
+
+    //This lines make the windows go to top of the page on load
     window.scrollTo(0, 0);
+    //End of windows go to top of the page
   }, []);
-  //End of windows go to top of the page
 
   //Handles click to go to the next and previous project
   const handleLeftLinkClick = () => {
@@ -119,10 +147,12 @@ function DetailsPage(props) {
       <div id="infoAndProjectContainer">
         <div id="projectInfo">
           <p className="detailName">{context.projectDatabase[project].name}</p>
-          <p className="detail">{context.projectDatabase[project].year}</p>
-          <div className="detail">
+          <p className="detailYear">{context.projectDatabase[project].year}</p>
+          <div className="detailText">
             {context.projectDatabase[project].textBox.map((line) => (
-              <p key={line}>{line}</p>
+              <p key={line} className="detail">
+                {line}
+              </p>
             ))}
           </div>
         </div>
@@ -136,6 +166,7 @@ function DetailsPage(props) {
           </div>
           <div id="mobileArrows">
             <img src={leftArrow} alt="move left" onClick={handleLeftLinkClick} />
+            <p>{context.projectDatabase[project].name}</p>
             <img src={rightArrow} alt="move left" onClick={handleRightLinkClick} />
           </div>
         </motion.div>

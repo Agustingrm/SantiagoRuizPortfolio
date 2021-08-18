@@ -1,17 +1,17 @@
 @font-face {
   font-family: HelNowMed;
-  src: url("../Fonts/HelveticaNowDisplay-Medium.otf") format("truetype");
+  src: url("../Fonts/HelveticaNowDisplay-Medium.woff") format("truetype");
 }
 
 @font-face {
   font-family: HelNowReg;
-  src: url("../Fonts/HelveticaNowDisplay-Regular.otf") format("truetype");
+  src: url("../Fonts/HelveticaNowDisplay-Regular.woff") format("truetype");
 }
 
 #projectInfo {
   background-color: white;
   z-index: 6;
-  width: 200px;
+  width: 240px;
   height: auto;
   position: fixed;
   top: 50vh;
@@ -20,34 +20,48 @@
 }
 
 .detailName {
-  margin-top: 5px;
-  font-size: 12px;
+  margin: 5px 0 2px;
+  font-size: 18px;
   font-family: HelNowMed;
 }
 
 .detail {
-  font-size: 10px;
+  font-size: 16px;
   font-family: HelNowReg;
+  margin: 0;
+}
+
+.detailYear {
+  margin-bottom:20px;
+  font-family: HelNowReg;
+  margin: 0;
+  font-size: 14px;
+  color: #808080;
+
+}
+
+.detailText {
+  margin: 28px 0;
 }
 
 #projectDisplay {
   float: left;
-  margin-left: calc(380px + calc(100vw / 264 - 380px / 264));
-  width: calc(100vw * 0.931818182 - 370px * 0.931818182);
+  margin-left: calc(420px + calc(100vw / 264 - 420px / 264));
+  width: calc(100vw * 0.931818182 - 410px * 0.931818182);
   display: flex;
   flex-direction: column;
-  padding: calc(9px + 100vw / 264 - 380px / 264) 0 0 0;
+  padding: calc(9px + 100vw / 264 - 420px / 264) 0 0 0;
   box-sizing: border-box;
   align-items: center;
 }
 
 #projectDisplay div {
-  height: calc(100vw * 0.611363636 - 370px * 0.611363636);
+  height: calc(100vw * 0.611363636 - 410px * 0.611363636);
   margin-bottom: 10px;
 }
 
 #projectDisplay img {
-  height: calc(100vw * 0.611363636 - 370px * 0.611363636);
+  height: calc(100vw * 0.611363636 - 410px * 0.611363636);
 }
 
 #leftTransparent {
@@ -132,7 +146,8 @@
   }
 
   .detailName {
-    font-size: 14px;
+    margin-top: 25px;
+    font-size: 18px;
     font-family: HelNowMed;
   }
 
@@ -140,6 +155,8 @@
     width: 95vw;
     display: flex;
     justify-content: space-between;
+    font-family: HelNowMed;
+    font-size: 18px;
   }
 
 }

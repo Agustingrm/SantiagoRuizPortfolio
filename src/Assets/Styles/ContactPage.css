@@ -1,14 +1,14 @@
 @font-face {
   font-family: HelNowReg;
-  src: url("../Fonts/HelveticaNowDisplay-Regular.otf") format("truetype");
+  src: url("../Fonts/HelveticaNowDisplay-Regular.woff") format("truetype");
 }
 
 #contactContainer {
   font-family: HelNowReg;
   float: right;
   width: calc(95vw - 350px);
-  margin-top: calc(20vh - 14px);
-  font-size: 14px;
+  margin-top: calc(25vh - 18px);
+  font-size: 18px;
 }
 
 #contactContainer div {

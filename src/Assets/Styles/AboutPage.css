@@ -1,6 +1,6 @@
 @font-face {
   font-family: HelNowReg;
-  src: url("../Fonts/HelveticaNowDisplay-Regular.otf") format("truetype");
+  src: url("../Fonts/HelveticaNowDisplay-Regular.woff") format("truetype");
 }
 
 #aboutContainer {
@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  padding-top: 10vh;
+  padding-top: 5vh;
   float: right;
   margin: 0 10px;
 }
@@ -19,7 +19,7 @@
   width: 500px;
   text-align: justify;
   margin-right: 10px;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 #aboutImageContainer img {
@@ -28,23 +28,23 @@
 }
 
 #aboutText1 {
-  margin: 0 auto 8vh;
+  margin: 0 auto 4vh;
 }
 
 #aboutText2 {
-  margin-bottom: 8vh;
+  margin-bottom: 4vh;
 }
 
 #aboutText3 {
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
 }
 
 #aboutText4 {
-  margin-bottom: 6vh;
+  margin-bottom: 3vh;
 }
 
 #aboutText5 {
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
 }
 
 @media all and (max-width: 960px) {

@@ -57,19 +57,19 @@ function GlobalState({ children }) {
   const projectIndustrialDesign = ["Grinder", "Knife", "Mirror", "Spoon"];
   const [windowDirection, setWindowDirection] = useState("none");
   const [rotation, setRotation] = useState(0);
-  const [exit,setExit] = useState('')
+  const [exit, setExit] = useState("");
   const [display, setDisplay] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("default");
 
   const resetAnimations = () => {
-    setExit('')
-    setRotation(0)
-  }
+    setExit("");
+    setRotation(0);
+  };
   const handleRotation = () => {
     if (rotation === 0) {
-      setRotation(rotation - 45);
+      setRotation(rotation - 90);
     } else {
-      setRotation(0)
+      setRotation(0);
     }
   };
 
@@ -83,72 +83,70 @@ function GlobalState({ children }) {
       year: 2020,
       cover: BedroomRenderCover,
       detailPhotos: [BedroomRender1, BedroomRender2, BedroomRender3, BedroomRender4],
-      textBox: ['Product Design', 'worked on sich design'], 
-      // text: 'Caja de texto', agregar categoria. Poner como caja para poner varios renglones product desing y worked on bla bla
-
+      textBox: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries", "worked on sich design"],
     },
     Curtains: {
       name: "Curtains",
       year: 2020,
       cover: CurtainsCover,
       detailPhotos: [Curtains1, Curtains2, Curtains3, Curtains4],
-      textBox: ['Product Design', 'worked on sich design', 'line 3'], 
+      textBox: ["Product Design", "worked on sich design", "line 3"],
     },
     Grinder: {
       name: "Grinder",
       year: 2020,
       cover: GrinderCover,
       detailPhotos: [Grinder1, Grinder2, Grinder3, Grinder4],
-      textBox: ['Product Design', 'worked on sich design', 'line 3'], 
+      textBox: ["Product Design", "worked on sich design", "line 3"],
     },
     HotelRender: {
       name: "Hotel Render",
       year: 2019,
       cover: HotelRenderCover,
       detailPhotos: [HotelRender1, HotelRender2, HotelRender3, HotelRender4],
-      textBox: ['Product Design', 'worked on sich design', 'line 3'], 
+      textBox: ["Product Design", "worked on sich design", "line 3"],
     },
     Kitchen: {
       name: "Kitchen",
       year: 2019,
       cover: KitchenCover,
       detailPhotos: [Kitchen1, Kitchen2, Kitchen3, Kitchen4],
-      textBox: ['Product Design', 'worked on sich design', 'line 3'], 
+      textBox: ["Product Design", "worked on sich design", "line 3"],
     },
     Knife: {
       name: "Knife",
       year: 2019,
       cover: KnifeCover,
       detailPhotos: [Knife1, Knife2, Knife3, Knife4],
-      textBox: ['Product Design', 'worked on sich design', 'line 3'], 
+      textBox: ["Product Design", "worked on sich design", "line 3"],
     },
     Mirror: {
       name: "Mirror",
       year: 2019,
       cover: MirrorCover,
       detailPhotos: [Mirror1, Mirror2, Mirror3, Mirror4],
-      textBox: ['Product Design', 'worked on sich design', 'line 3'], 
+      textBox: ["Product Design", "worked on sich design", "line 3"],
     },
     SofaRender: {
       name: "Sofa Render",
       year: 2019,
       cover: SofaRenderCover,
       detailPhotos: [SofaRender1, SofaRender2, SofaRender3],
-      textBox: ['Product Design', 'worked on sich design', 'line 3'], 
+      textBox: ["Product Design", "worked on sich design", "line 3"],
     },
     Spoon: {
       name: "Spoon",
       year: 2019,
       cover: SpoonCover,
       detailPhotos: [Spoon1, Spoon2, Spoon3, Spoon4],
-      textBox: ['Product Design', 'worked on sich design', 'line 3'], 
+      textBox: ["Product Design", "worked on sich design", "line 3"],
     },
     Wheel: {
       name: "Wheel",
       year: 2019,
       cover: WheelCover,
       detailPhotos: [Wheel1, Wheel2, Wheel3, Wheel4],
-      textBox: ['Product Design', 'worked on sich design'], 
+      textBox: ["Product Design", "worked on sich design"],
     },
   };
 

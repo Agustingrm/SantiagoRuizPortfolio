@@ -13,8 +13,7 @@ function ContactPage() {
     <motion.div id="contactContainer" initial="one" animate="two" exit="three" variants={fading} transition={shortTransition}>
       <p>For job inquiries, questions or just say hi.</p>
       <div>
-        <p>email</p>
-        <p>hi@santigo-ruiz.com</p>
+        <a href = "mailto: abc@gmail.com">hi@santigo-ruiz.com</a>
       </div>
       <div>
         <p>phone</p>
