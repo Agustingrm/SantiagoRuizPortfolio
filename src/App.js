@@ -16,7 +16,7 @@ function App() {
   return (
     <GlobalState>
       <Menu />
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence >
         <Switch location={location} key={location.pathname}>
             <Route path="/SantiagoRuizPortfolio" exact component={OverviewPage} />
             <Route path="/SantiagoRuizPortfolio/about" exact component={AboutPage} />

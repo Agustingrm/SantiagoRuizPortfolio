@@ -1,30 +1,30 @@
 export const animationLeft2Right = {
   one: {
-    x: -1500,
+    x: "calc(-100vw + 400px)",
   },
   two: {
     x: 0,
   },
   three: {
-    x: 1500,
+    x: "calc(100vw - 400px)",
   },
 };
 
 export const animationRight2Left = {
   one: {
-    x: 1500,
+    x: "calc(100vw - 400px)",
   },
   two: {
     x: 0,
   },
   three: {
-    x: -1500,
+    x: "calc(-100vw + 400px)",
   },
 };
 
 export const fading = {
   one: {
-    opacity:0,
+    opacity: 0,
   },
   two: {
     opacity: 1,
@@ -43,4 +43,3 @@ export const shortTransition = {
   duration: 0.15,
   type: "tween",
 };
-

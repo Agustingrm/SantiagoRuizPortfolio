@@ -25,13 +25,12 @@ function DetailsPage(props) {
   const projectCGIIndex = projectCGI.findIndex((element) => element === project);
   const projectGraphicsIndex = projectGraphics.findIndex((element) => element === project);
   const projectIndustrialDesignIndex = projectIndustrialDesign.findIndex((element) => element === project);
-  //End of project finf index
+  //End of project find index
 
   //Takes you to next and previous project
   let previousProject = projectOverview[(projectOverviewIndex + (projectOverview.length - 1)) % projectOverview.length];
   let nextProject = projectOverview[(projectOverviewIndex + (projectOverview.length + 1)) % projectOverview.length];
   //End of next and previous project
-
   //This let me change between animations, from left to right or from right to left
 
   //This lines handle the animation
